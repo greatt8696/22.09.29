@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Count, CountView, Report, Reports, Details } from "./components";
+import "./input.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [onDetails, setOnDetails] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App  flex bg-black justify-center align-middle items-stretch  w-screen h-screen text text-white">
+      <div className="relative"></div>
+      <div className="fixed max-h-screen grid grid-cols-2 gap-8">
+        <Count count={count} setCount={setCount}></Count>
+        <CountView count={count}></CountView>
+        <Report></Report>
+        <Reports></Reports>
+      </div>
+      {onDetails && <Details></Details>}
     </div>
   );
 }
