@@ -16,7 +16,7 @@ function App() {
         <Report></Report>
         <Reports></Reports>
       </div>
-      {onDetails && <Details></Details>}
+      {/* {onDetails && <Details></Details>} */}
     </div>
   );
 }
